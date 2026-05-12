@@ -85,4 +85,4 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Push Docker image
-        run: docker push tuusuario/rentcar-back:latest
+        run: docker push visvirideveloper/rentcar-back:latest
