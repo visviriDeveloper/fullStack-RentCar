@@ -1,0 +1,12 @@
+
+services:
+  backend:
+    image: visvirideveloper/rentcar-back:latest
+    ports:
+      - "8080:8080"
+    restart: always
+  database:
+    image: visvirideveloper/petstore-db:latest
+    ports:
+      - "3306:3306"
+    restart: always
