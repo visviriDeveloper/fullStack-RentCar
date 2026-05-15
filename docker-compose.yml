@@ -6,7 +6,10 @@ services:
       - "8080:8080"
     restart: always
   database:
-    image: visvirideveloper/petstore-db:latest
+    image: mysql:8.0
+    container_name: rentcar-db
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
     ports:
       - "3306:3306"
     restart: always
