@@ -2,6 +2,7 @@
 services:
   backend:
     image: visvirideveloper/rentcar-back:latest
+    container_name: rentcar-backend
     ports:
       - "8080:8080"
     restart: always
