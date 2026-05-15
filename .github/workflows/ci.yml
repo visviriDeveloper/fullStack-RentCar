@@ -78,7 +78,7 @@ jobs:
            -Dsonar.organization=${ORGANIZATION_SONAR} \
            -Dsonar.login=${SONAR_TOKEN}
   Build Docker image:
-    runs on: ubuntu-latest
+    runs-on: ubuntu-latest
     needs: analisis-sonarcloud
     steps:
       - name: run docker image
