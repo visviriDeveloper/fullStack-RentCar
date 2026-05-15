@@ -81,12 +81,16 @@ jobs:
     runs-on: ubuntu-latest
     needs: analisis-sonarcloud
     steps:
+      - name: checkout del codigo
+        uses: actions/checkout@v4
       - name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: run docker image
-        run: docker build -t visvirideveloper/rentcar-back:latest .
-      - name: Push Docker image
-        run: docker push visvirideveloper/rentcar-back:latest
+      - name: Construir y subir imagen docker
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/rentcar-back:latest
